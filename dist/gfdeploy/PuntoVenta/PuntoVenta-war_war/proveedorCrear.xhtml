@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./templates/Formularios.xhtml">
+
+           
+            <ui:define name="content">
+                <f:view>
+                    <h:form>
+
+                        <h1><h:outputText value="#{proveedorBEAN.titulo}" style="font-family: monospace; margin-left: 450px; font-size: 30px; color: #0033cc; text-decoration: #000000"/></h1>
+                        <p:panelGrid columns="2" style="display: flex; justify-content: center; padding-top: 30px;">
+                            <h:outputText value="Id:"/>
+                            <h:outputText value="#{proveedorBEAN.proveedor.id}" title="Id"/>
+                            <p:outputLabel value="Nombre:" for="nombre" />
+                            <p:inputText id="nombre" value="#{proveedorBEAN.proveedor.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                            <p:outputLabel value="Marca:" for="marca" />
+                            <p:inputText id="marca" value="#{proveedorBEAN.proveedor.marca}" title="Marca" required="true" requiredMessage="The Marca field is required."/>
+                            <p:outputLabel value="Telefono:" for="telefono" />
+                            <p:inputText id="telefono" value="#{proveedorBEAN.proveedor.telefono}" title="Telefono" required="true" requiredMessage="The Telefono field is required."/>
+                        </p:panelGrid>
+                        <p:commandButton action="#{proveedorBEAN.agregar()}" actionListener="#{proveedorBEAN.prepararNuevoProveedor()}"  value="Agregar" rendered="#{proveedorBEAN.proveedor.id==null}" icon="pi pi-check-circle"/>
+                        <p:commandButton action="#{proveedorBEAN.editar()}" actionListener="#{proveedorBEAN.prepararEditar(item)}"  value="Modificar" rendered="#{proveedorBEAN.proveedor.id!=null}" icon="pi pi-file-edit"/>
+                        <br></br>
+                        <br></br>
+                        <p:commandButton action="proveedorLista.xhtml" icon="pi pi-backward" value="Cancelar" immediate="true"/>
+
+
+                        
+
+                    </h:form>
+                </f:view>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

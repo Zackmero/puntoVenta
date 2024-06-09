@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        
+    </h:head>
+    <h:body>
+        <f:view>
+
+            <h:form>
+                <h1><h:outputText value="#{permisoBEAN.titulo}"/></h1>
+
+                <h:inputHidden id="id" value="#{permisoBEAN.permiso.id}"/>
+                
+                <p:panelGrid columns="2">
+                    <h:outputText value="Id:"/>
+                    <h:outputText value="#{permisoBEAN.permiso.id}" title="Id"/>
+                    <h:outputText value="TipoPermiso:"/>
+                    <h:outputText value="#{permisoBEAN.permiso.tipoPermiso}" title="TipoPermiso"/>
+                </p:panelGrid>
+
+
+
+
+                <br></br>
+                <br></br>
+                <h:outputText>#{permisoBEAN.permiso.permisoRolList}</h:outputText>
+                <h:outputText>#{permisoBEAN.permiso.tipoPermiso}</h:outputText>
+                <p:commandButton action="#{permisoBEAN.eliminar()}" value="Eliminar" icon="pi pi-eraser" styleClass="ui-button-flat" />
+                <br></br>
+                <br></br>
+                <p:commandButton action="permisoLista.xhtml" value="Cancelar" icon="pi pi-arrow-left" styleClass="ui-button-flat" />
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

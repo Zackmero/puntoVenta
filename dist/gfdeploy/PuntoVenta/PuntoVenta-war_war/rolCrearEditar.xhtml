@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./templates/Template.xhtml">
+
+            <ui:define name="content">
+                <f:view>
+
+
+                    <h:form>
+                        <h1><h:outputText value="#{rolBEAN.titulo}"/></h1>
+                        <p:panelGrid columns="2">
+                            <p:outputLabel value="Rol:" for="rol" />
+                            <p:inputText id="rol" value="#{rolBEAN.rol.rol}" title="Rol" required="true" requiredMessage="The Rol field is required."/>
+                        </p:panelGrid>
+
+                        <div>
+                            <p:commandButton action="#{rolBEAN.agregar()}" value="Agregar" rendered="#{rolBEAN.rol.id==null}"/>
+                            <p:commandButton action="#{rolBEAN.editar()}" value="Modificar" rendered="#{rolBEAN.rol.id!=null}"/>
+                            <p:commandButton action="rolLista.xhtml" value="Cancelar" immediate="true"/>
+                        </div>
+                    </h:form>
+
+
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

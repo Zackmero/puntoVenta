@@ -1,0 +1,89 @@
+
+
+
+.fondoGrande{
+    background-color: #ffb100;
+}
+
+.fondoMedio{
+    background-color: #0c8ef9;
+}
+
+.fondoChico{
+    background-color: #9506a8;
+}
+
+.fondoGradiant{
+   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(98,89,89,0.9752275910364145) 9%, rgba(171,157,157,1) 24%, rgba(94,86,86,1) 33%, rgba(116,107,107,1) 52%, rgba(73,66,66,1) 78%, rgba(0,0,0,0.9752275910364145) 100%);
+}
+
+.fondoSol{
+    background: radial-gradient(circle, rgba(255,244,0,1) 0%, rgba(196,37,37,1) 6%, rgba(192,78,43,1) 18%, rgba(59,59,106,1) 19%, rgba(0,0,0,1) 29%, rgba(22,20,20,1) 35%, rgba(0,0,0,0.9752275910364145) 100%);
+}
+
+.degradadoBlue{
+  background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+}
+
+.margenGrande{
+    margin: 40px;
+}
+
+.margenMedio{
+    margin: 30px;
+}
+
+.margenChico{
+    margin: 20px;
+}
+
+.paddingGrande{
+    padding: 30px;
+}
+
+.paddingMedio{
+    padding: 20px;
+}
+
+.paddingChico{
+    padding: 10px;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.paddingTable{
+    padding: 10px;
+}
+
+.fontWhite{
+    color: white;
+}
+
+.fontBlack{
+    color: black;
+}
+
+.spaceDark{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7px;
+    width: 7px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 30px 50px 3px 8px #fff,
+                -30px -70px 1px 8px #fff;
+    
+}
+
+
+
+
+
+
+
+

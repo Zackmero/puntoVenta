@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="./templates/Template.xhtml">
+            <ui:define name="content">
+                <f:view>
+
+
+                    <h:form>
+                        <h1><h:outputText value="View"/></h1>
+                        <p:panelGrid columns="2">
+                            <h:outputText value="Id:"/>
+                            <h:outputText value="#{usuarioBEAN.usuario.id}" title="Id"/>
+                            <h:outputText value="Nombre:"/>
+                            <h:outputText value="#{usuarioBEAN.usuario.nombre}" title="Nombre"/>
+                            <h:outputText value="Apellido:"/>
+                            <h:outputText value="#{usuarioBEAN.usuario.apellido}" title="Apellido"/>
+                            <h:outputText value="Edad:"/>
+                            <h:outputText value="#{usuarioBEAN.usuario.edad}" title="Edad"/>
+                            <h:outputText value="Direccion:"/>
+                            <h:outputText value="#{usuarioBEAN.usuario.direccion}" title="Direccion"/>
+                            <h:outputText value="CodigoPostal:"/>
+                            <h:outputText value="#{usuarioBEAN.usuario.codigoPostal}" title="CodigoPostal"/>
+                            <h:outputText value="Telefono:"/>
+                            <h:outputText value="#{usuarioBEAN.usuario.telefono}" title="Telefono"/>
+                            <h:outputText value="RolId:"/>
+                            <h:outputText value="#{usuarioBEAN.usuario.nombre}" title="Rol"/>
+                        </p:panelGrid>
+                    </h:form>
+
+                </f:view>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

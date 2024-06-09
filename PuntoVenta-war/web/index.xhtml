@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <head>
+        <link href="resources/css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="resources/bootstrap-5.3.0-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    </head>
+
+    <h:body class="fondoSol margenMedio">
+        <h:form>
+            <div class="container">
+                
+                <div class="row degradadoBlue rounded-start-pill justify-content-center">
+                    
+                    <div class="col col-md-6 contenedor justify-content-center" style="color:white">
+                        <img src="resources/img/champagne.png" width="64" height="64" alt="champagne" class="margenChico"/>                     
+                        <h1><span class="text-nowrap border">Licoreria</span>  Shop</h1>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--________________________________________________________________________________________________________________________________-->
+            <div class="text-center conteiner paddingGrande">
+
+
+                <div class="row justify-content-center" >
+                    <div class="col-4 margenMedio">
+                        <h1 class="paddingMedio fontWhite">Permisos</h1>
+                        <div class="margenMedio">
+                            <h:commandButton type="button" action="permisoCrear.xhtml"  class="btn btn-info" actionListener="#{permisoBEAN.prepararNuevoPermiso()}" value="Agregar Permiso"/>
+                        </div>
+                        <div class="margenMedio">
+                            <h:commandButton action="permisoLista.xhtml" class="btn btn-info" actionListener="#{permisoBEAN.getAllPermisos()}" value="Listar Permisos"/>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row justify-content-between ">
+                    <div class="col-4 margenMedio">
+                        <h1 class="paddingMedio fontWhite">Roles</h1>
+                        <div class="margenMedio">
+                            <h:commandButton action="#{rolBEAN.agregar()}" class="btn btn-info" value="Agregar Rol" />
+                        </div>
+                        <div class="margenMedio">
+                            <h:commandButton action="#{rolBEAN.rolLista()}" class="btn btn-info" value="Lista de Roles" />
+                        </div>
+                    </div>
+
+                    <div class="col-4 margenMedio">
+                        <h1 class="paddingMedio fontWhite">Usuarios</h1>
+                        <div class="margenMedio">
+                            <h:commandButton action="#{usuarioBEAN.prepararNuevoUsuario()}" class="btn btn-info" value="Agregar Usuario"/>
+                        </div>
+                        <div class="margenMedio">
+                            <h:commandButton action="#{usuarioBEAN.listaUsuario()}" class="btn btn-info" value="Listar Usuarios"/>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--_______________________________________________________________________________________________________________________________-->
+            <div class="text-center conteiner paddingGrande">
+
+                <div class="row justify-content-between">
+
+                    <div class="col-4 margenMedio">
+                        <h1 class="paddingMedio fontWhite">Ventas</h1>
+                        <div class="margenMedio">
+                            <h:commandButton action="#{usuarioBEAN.prepararNuevoUsuario()}" class="btn btn-info" value="Agregar Venta"/>
+                        </div>
+                        <div class="margenMedio">
+                            <h:commandButton action="#{usuarioBEAN.listaUsuario()}" class="btn btn-info" value="Listar Ventas"/>  
+                        </div>
+                    </div>
+
+                    <div class="col-4 margenMedio">
+                        <h1 class="paddingMedio fontWhite">Productos</h1>
+                        <div class="margenMedio">
+                            <h:commandButton action="#{usuarioBEAN.prepararNuevoUsuario()}" class="btn btn-info" value="Agregar Producto"/>
+                        </div>
+                        <div class="margenMedio">
+                            <h:commandButton action="#{usuarioBEAN.listaUsuario()}" class="btn btn-info" value="Listar Productos"/>  
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row justify-content-center margenMedio" >
+                    <div class="col-4 margenMedio">
+                        <h1 class="paddingMedio fontWhite">Proveedores</h1>
+                        <div class="margenMedio">
+                            <h:commandButton action="#{proveedorBEAN.agregar()}" class="btn btn-info" value="Agregar Proveedor"/>
+                        </div>
+                        <div class="margenMedio">
+                            <h:commandButton action="#{proveedorBEAN.listaProveedores()}" class="btn btn-info" value="Listar Proveedores"/>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+        </h:form>
+
+    </h:body>
+</html>
+

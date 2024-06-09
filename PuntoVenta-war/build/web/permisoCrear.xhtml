@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./templates/Formularios.xhtml">
+
+            <ui:define name="left">
+                <f:view>
+                    <h:form>
+                        <p:menu toggleable="true" >
+                            <p:menuitem action="#{permisoBEAN.agregar()}"  value="Agregar"  icon="pi pi-check-circle" rendered="#{permisoBEAN.permiso.id==null}"/>
+                            <p:menuitem action="#{permisoBEAN.editar()}"  actionListener="#{permisoBEAN.prepararEditar(item)}" value="Modificar" icon="pi pi-file-edit" rendered="#{permisoBEAN.permiso.id!=null}"/>
+                            <br></br> 
+                            <br></br>
+                            <p:menuitem action="permisoLista.xhtml" value="Cancelar" icon="pi pi-times" immediate="true"/>
+                        </p:menu>
+                    </h:form>
+                </f:view>
+            </ui:define>
+
+            <ui:define name="content">
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="#{permisoBEAN.titulo}" style="font-family: monospace; margin-left: 450px; font-size: 30px; color: #0033cc;text-decoration: #000000"/></h1>
+                        <p:panelGrid columns="2" style="display: flex; justify-content: center; padding-top: 30px;">
+                            <p:outputLabel value="TipoPermiso:" for="tipoPermiso" />
+                            <p:inputText id="tipoPermiso" value="#{permisoBEAN.permiso.tipoPermiso}" title="TipoPermiso" required="true" requiredMessage="The TipoPermiso field is required."/>
+                        </p:panelGrid>
+                        <p:commandButton action="#{permisoBEAN.agregar()}" actionListener="#{permisoBEAN.prepararNuevoPermiso()}" value="ADD" />
+                    </h:form>
+                </f:view>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

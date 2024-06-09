@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="./resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
+        <link href="./resources/css/default.css" rel="stylesheet" type="text/css" />
+        <link href="../resources/css/styles.css" rel="stylesheet" type="text/css" />
+        <script src="../resources/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <title>Facelets Template Principal</title>
+    </h:head>
+
+    <h:body style="background-color: #00d4ff">
+
+        <div id="top" style="background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%); color: white;">
+            <div class="row degradadoBlue">
+                <div class="col col-md-1"></div>
+                <div class="col col-md-5 paddingMedio" style="display: flex; justify-content: center; margin: 8px;">
+                    <img src="resources/img/wine-glass.png" width="64" height="64" alt="champagne" style="margin: 10px 25px 10px 20px;"/>  
+                    <p style="font-size: 30px; color: orange;"><span class="text-nowrap  border">Licoreria</span>  Shop</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="left" style="background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%); width: 170px; height: 620px; padding-top: 20px; padding-right: 10px;">  
+            <ui:insert name="left">
+                <p:submenu label="Navegacion" style="width: 150px;">
+                    <p:menuitem action="index.xhtml" value="Principal" icon="pi pi-home"/>              
+                    <p:menuitem action="#{permisoBean.permisoPage()}" value="Permisos" icon="pi pi-angle-right"/>
+                    <p:menuitem action="#{proveedorBean.permisoPage()}" value="Proveedores" icon="pi pi-angle-right"/>
+                    <p:menuitem action="#{productoBean.permisoPage()}" value="Productos" icon="pi pi-angle-right"/>
+                    <p:menuitem action="#{rolBean.permisoPage()}" value="Roles" icon="pi pi-angle-right"/>
+                    <p:menuitem action="#{ventaBean.listaVenta()}" value="Ventas" icon="pi pi-angle-right"/>
+                    <p:menuitem action="#{usuarioBean.usuarioPage()}" value="Usuarios" icon="pi pi-angle-right"/>
+                </p:submenu>
+            </ui:insert>
+
+
+
+        </div>
+
+        <div id="content" class="left_content" style="background: linear-gradient(90deg, rgba(0,212,255,1) 24%, rgba(33,179,209,1) 58%, rgba(53,134,150,1) 80%, rgba(53,134,150,1) 100%); display: block; justify-content: space-between; height: 620px;">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+        <div id="bottom" style="background-color: #000000; color: white; height: 60px; text-align: center;">
+            <ui:insert name="bottom">Ya pongame 7 profe :)</ui:insert>
+        </div>
+
+    </h:body>
+</html>
